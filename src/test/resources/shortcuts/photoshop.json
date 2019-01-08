@@ -1,0 +1,22 @@
+{
+  "application": "photoshop.exe",
+  "shortcuts": [
+    {
+      "name": "Select all",
+      "modifiers": [
+        "ctrl",
+        "alt",
+        "shift"
+      ],
+      "key": "A"
+    },
+    {
+      "name": "Select bulk",
+      "modifiers": [
+        "ctrl",
+        "shift"
+      ],
+      "key": "B"
+    }
+  ]
+}

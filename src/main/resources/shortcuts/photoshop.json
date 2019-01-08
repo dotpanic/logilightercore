@@ -1,0 +1,73 @@
+{
+  "application": "photoshop.exe",
+  "shortcuts": [
+    {
+      "name": "Cut",
+      "modifiers": [
+        "ctrl"
+      ],
+      "key": "X"
+    },
+    {
+      "name": "Copy",
+      "modifiers": [
+        "ctrl"
+      ],
+      "key": "C"
+    },
+    {
+      "name": "Paste",
+      "modifiers": [
+        "ctrl"
+      ],
+      "key": "V"
+    },
+    {
+      "name": "Demo T shortcut",
+      "modifiers": [
+        "ctrl",
+        "alt"
+      ],
+      "key": "T"
+    },
+    {
+      "name": "Demo Y shortcut",
+      "modifiers": [
+        "alt",
+        "shift"
+      ],
+      "key": "Y"
+    },
+    {
+      "name": "Demo U shortcut",
+      "modifiers": [
+        "shift"
+      ],
+      "key": "U"
+    },
+    {
+      "name": "Demo I shortcut",
+      "modifiers": [
+        "ctrl",
+        "alt",
+        "shift"
+      ],
+      "key": "I"
+    },
+    {
+      "name": "Demo O shortcut",
+      "modifiers": [
+        "ctrl",
+        "shift"
+      ],
+      "key": "O"
+    },
+    {
+      "name": "Demo P shortcut",
+      "modifiers": [
+        "alt"
+      ],
+      "key": "P"
+    }
+  ]
+}

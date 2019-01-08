@@ -1,5 +1,7 @@
 package com.logilighter;
 
+import com.logilighter.events.KeyEventHandler;
+import com.logilighter.events.KeyListener;
 import com.logilighter.helper.ShortcutsLoader;
 import com.logitech.gaming.LogiLED;
 import lc.kra.system.keyboard.GlobalKeyboardHook;

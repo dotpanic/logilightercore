@@ -1,5 +1,6 @@
-package com.logilighter;
+package com.logilighter.events;
 
+import com.logilighter.ApplicationParams;
 import com.logilighter.helper.KeyConverter;
 import com.logilighter.model.Shortcut;
 import com.logitech.gaming.LogiLED;

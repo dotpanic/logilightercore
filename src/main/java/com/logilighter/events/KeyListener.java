@@ -1,5 +1,6 @@
-package com.logilighter;
+package com.logilighter.events;
 
+import com.logilighter.ApplicationParams;
 import lc.kra.system.keyboard.event.GlobalKeyAdapter;
 import lc.kra.system.keyboard.event.GlobalKeyEvent;
 import org.slf4j.Logger;

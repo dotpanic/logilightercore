@@ -219,6 +219,8 @@ public class KeyConverter {
         keys.add(LogiLED.G_9);
         keys.add(LogiLED.G_LOGO);
         keys.add(LogiLED.G_BADGE);
+        keys.add(LogiLED.CAPS_LOCK);
+        keys.add(LogiLED.SCROLL_LOCK);
 
         return keys;
     }

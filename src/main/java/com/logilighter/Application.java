@@ -39,6 +39,7 @@ public class Application {
 
             // Init lights
             KeyEventHandler keyEventHandler = new KeyEventHandler();
+            keyEventHandler.initKeyboard();
             keyEventHandler.lightNumLock();
             keyEventHandler.lightCapsLock();
             keyEventHandler.lightScrollLock();

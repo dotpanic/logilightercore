@@ -39,11 +39,11 @@ public class ShortcutsLoader {
                         if (jsonShortcut.hasNonNull("name")
                         && jsonShortcut.hasNonNull("modifiers")
                         && jsonShortcut.hasNonNull("key")) {
-                            JsonNode jsonMofidiers = jsonShortcut.path("modifiers");
-                            if (jsonMofidiers.isArray()) {
+                            JsonNode jsonModifiers = jsonShortcut.path("modifiers");
+                            if (jsonModifiers.isArray()) {
                                 Set<Integer> modifiers = new HashSet<>();
-                                for (JsonNode jsonMofidier : jsonMofidiers) {
-                                    modifiers.add(KeyConverter.convertKeyFromJsonToLogiled(jsonMofidier.asText()));
+                                for (JsonNode jsonModifier : jsonModifiers) {
+                                    modifiers.add(KeyConverter.convertKeyFromJsonToLogiled(jsonModifier.asText()));
                                 }
                                 shortcutsConfiguration.addShortcut(
                                         new Shortcut(

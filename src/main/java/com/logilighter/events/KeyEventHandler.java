@@ -16,6 +16,10 @@ public class KeyEventHandler {
 
     private static Logger logger = LoggerFactory.getLogger(KeyEventHandler.class.getName());
 
+    public void initKeyboard() {
+        lightKeys(KeyConverter.getAllKeys());
+    }
+
     public void keyPressed(GlobalKeyEvent event) {
         switch (event.getVirtualKeyCode()) {
             case GlobalKeyEvent.VK_NUMLOCK:
@@ -121,43 +125,43 @@ public class KeyEventHandler {
     }
 
     public void focusKeys(Set<Integer> keys) {
-        logger.debug("Setting keys...");
+        logger.debug("Focusing keys {}...", keys);
         keys.forEach(key -> LogiLED.LogiLedSetLightingForKeyWithKeyName(key, 100, 0, 0));
-        logger.debug("Keys lightning set!");
+        logger.debug("Keys focus set!");
     }
 
     public void flashKeys(Set<Integer> keys) {
-        logger.debug("Setting keys...");
-        keys.forEach(key -> LogiLED.LogiLedFlashSingleKey(key, 100, 0, 0, LogiLED.LOGI_LED_DURATION_INFINITE, 200));
-        logger.debug("Keys lightning set!");
+        logger.debug("Setting flash keys {}...", keys);
+        keys.forEach(key -> LogiLED.LogiLedPulseSingleKey(key, 100, 0, 0, 0, 0, 0, 200, true));
+        logger.debug("Flash keys set!");
     }
 
     public void unflashKeys(Set<Integer> keys) {
-        logger.debug("Setting keys...");
+        logger.debug("Unsetting flash keys {}...", keys);
         keys.forEach(LogiLED::LogiLedStopEffectsOnKey);
-        logger.debug("Keys lightning set!");
+        logger.debug("Flash keys unset!");
     }
 
     public void lightKeys(Set<Integer> keys) {
-        logger.debug("Setting keys...");
+        logger.debug("Lightning keys {}...", keys);
         keys.forEach(key -> LogiLED.LogiLedSetLightingForKeyWithKeyName(key, 100, 100, 100));
         logger.debug("Keys lightning set!");
     }
 
     public void darkKeys(Set<Integer> keys) {
-        logger.debug("Setting keys...");
+        logger.debug("Darkening keys {}...", keys);
         keys.forEach(key -> LogiLED.LogiLedSetLightingForKeyWithKeyName(key, 0, 0, 0));
-        logger.debug("Keys lightning set!");
+        logger.debug("Keys darkening set!");
     }
 
     public void saveKeysState(Set<Integer> keys) {
-        logger.debug("Saving keys state...");
+        logger.debug("Saving keys state {}...", keys);
         keys.forEach(LogiLED::LogiLedSaveLightingForKey);
         logger.debug("Keys state saved!");
     }
 
     public void restoreKeysState(Set<Integer> keys) {
-        logger.debug("Restoring keys state...");
+        logger.debug("Restoring keys state {}...", keys);
         keys.forEach(LogiLED::LogiLedRestoreLightingForKey);
         logger.debug("Keys state restored!");
     }

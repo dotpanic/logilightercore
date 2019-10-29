@@ -1,14 +1,16 @@
 package com.logilighter.events;
 
-import com.logilighter.ApplicationParams;
-import lc.kra.system.keyboard.event.GlobalKeyAdapter;
-import lc.kra.system.keyboard.event.GlobalKeyEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.logilighter.ApplicationParams;
+
+import lc.kra.system.keyboard.event.GlobalKeyAdapter;
+import lc.kra.system.keyboard.event.GlobalKeyEvent;
+
 public class KeyListener extends GlobalKeyAdapter {
 
-    private static Logger logger = LoggerFactory.getLogger(GlobalKeyAdapter.class.getName());
+    private static Logger logger = LoggerFactory.getLogger(KeyListener.class.getName());
 
     private KeyEventHandler keyEventHandler;
 

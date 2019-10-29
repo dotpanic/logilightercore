@@ -1,17 +1,18 @@
 package com.logilighter.helper;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.HashSet;
+import java.util.Set;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.logilighter.model.Shortcut;
 import com.logilighter.model.ShortcutsConfiguration;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.util.HashSet;
-import java.util.Set;
 
 public class ShortcutsLoader {
 
@@ -20,13 +21,13 @@ public class ShortcutsLoader {
     private ShortcutsLoader() {
     }
 
-    public static ShortcutsConfiguration loadShortcuts(File resourceFile) {
+    public static ShortcutsConfiguration loadShortcuts(Path resourceFile) {
 
         ShortcutsConfiguration shortcutsConfiguration = new ShortcutsConfiguration();
 
         try {
             ObjectMapper responseMapper = new ObjectMapper();
-            JsonNode root = responseMapper.readTree(Files.readAllBytes(resourceFile.toPath()));
+            JsonNode root = responseMapper.readTree(Files.readAllBytes(resourceFile));
 
             if (root.hasNonNull("application")) {
                 shortcutsConfiguration.setApplicationName(root.path("application").asText());

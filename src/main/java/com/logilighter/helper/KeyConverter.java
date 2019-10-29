@@ -1,14 +1,19 @@
 package com.logilighter.helper;
 
-import com.logitech.gaming.LogiLED;
-import lc.kra.system.keyboard.event.GlobalKeyEvent;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class KeyConverter {
+import com.logitech.gaming.LogiLED;
+
+import lc.kra.system.keyboard.event.GlobalKeyEvent;
+
+public final class KeyConverter {
+
+    private KeyConverter() {
+        super();
+    }
 
     private static Map<String, Integer> jsonToLogiledMap = initJsonToLogiledMap();
     private static Map<Integer, Integer> javaToLogiledMap = initJavaToLogiledMap();

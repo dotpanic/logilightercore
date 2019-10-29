@@ -1,16 +1,21 @@
 package com.logilighter;
 
-import com.logilighter.events.KeyEventHandler;
-import com.logilighter.events.KeyListener;
-import com.logilighter.helper.ShortcutsLoader;
-import com.logitech.gaming.LogiLED;
-import lc.kra.system.keyboard.GlobalKeyboardHook;
+import java.net.URISyntaxException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Map;
+import java.util.Objects;
+
 import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
-import java.util.Map;
+import com.logilighter.events.KeyEventHandler;
+import com.logilighter.events.KeyListener;
+import com.logilighter.helper.ShortcutsLoader;
+import com.logitech.gaming.LogiLED;
+
+import lc.kra.system.keyboard.GlobalKeyboardHook;
 
 public class Application {
 
@@ -24,7 +29,7 @@ public class Application {
 
             // Load shortcuts
             ClassLoader classLoader = Application.class.getClassLoader();
-            File shortcutsFile = new File(classLoader.getResource("shortcuts/photoshop.json").getFile());
+            Path shortcutsFile = Paths.get(Objects.requireNonNull(classLoader.getResource("shortcuts/photoshop.json")).toURI());
             ApplicationParams.getInstance().setShortcutsConfiguration(ShortcutsLoader.loadShortcuts(shortcutsFile));
 
             LogiLED.LogiLedInit();
@@ -54,6 +59,8 @@ public class Application {
                 keyboardHook.shutdownHook();
             }
 
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
         } finally {
             LogiLED.LogiLedRestoreLighting();
             LogiLED.LogiLedShutdown();

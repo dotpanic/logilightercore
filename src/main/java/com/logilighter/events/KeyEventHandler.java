@@ -1,16 +1,18 @@
 package com.logilighter.events;
 
+import java.util.Collections;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.logilighter.ApplicationParams;
 import com.logilighter.helper.KeyConverter;
 import com.logilighter.model.Shortcut;
 import com.logitech.gaming.LogiLED;
-import lc.kra.system.keyboard.event.GlobalKeyEvent;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import java.util.Collections;
-import java.util.Set;
-import java.util.stream.Collectors;
+import lc.kra.system.keyboard.event.GlobalKeyEvent;
 
 public class KeyEventHandler {
 
@@ -48,7 +50,7 @@ public class KeyEventHandler {
         Set<Integer> pressedKeys = ApplicationParams.getInstance().getPressedKeys();
         Set<Integer> allKeys = KeyConverter.getAllKeys();
 
-        if (pressedKeys.size() > 0) {
+        if (!pressedKeys.isEmpty()) {
 
             // For all possible keys, either focus or unfocus keys
             Set<Shortcut> eligibleShortcuts = ApplicationParams.getInstance().getShortcutsConfiguration().getCandicates(

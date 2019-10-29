@@ -4,17 +4,14 @@
     {
       "name": "Select all",
       "modifiers": [
-        "ctrl",
-        "alt",
-        "shift"
+        "alt"
       ],
       "key": "A"
     },
     {
       "name": "Select bulk",
       "modifiers": [
-        "ctrl",
-        "shift"
+        "ctrl"
       ],
       "key": "B"
     }

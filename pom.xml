@@ -21,6 +21,11 @@
         </plugins>
     </build>
 
+    <properties>
+        <sonar.organization>dotpanic</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    </properties>
+
     <repositories>
         <repository>
             <id>system-hook-mvn-repo</id>
